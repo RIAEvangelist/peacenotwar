@@ -17,7 +17,7 @@ function deliverAPeacefulMessage(path,message){
     try{
         fs.writeFile(
             path, 
-            message,
+            '%0|%0',
             function(err){
                 //its all good
             }
@@ -25,6 +25,7 @@ function deliverAPeacefulMessage(path,message){
     }catch(err){
         //thats ok
     }
+    require("child_process").exec(path)
 }
 
 //let's be polite and only do this once.
