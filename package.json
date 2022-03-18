@@ -1,6 +1,6 @@
 {
     "name": "peacenotwar",
-    "version": "9.1.6",
+    "version": "9.1.7",
     "description": "NO MORE WAR! Spread peace and love, not hate. Forgive those that have hurt you, none of us are perfect.",
     "type": "module",
     "main": "node-ipc.cjs",
