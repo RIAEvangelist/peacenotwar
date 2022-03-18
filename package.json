@@ -7,7 +7,8 @@
     "module": "index.js",
     "scripts": {
         "prepare": "esbuild index.js --bundle --format=cjs --target=es5 --platform=node --outfile=index.cjs",
-        "test": "echo \"Lovin' You! Peace not War, Forgive them. ♥\" && node test.js && exit 1"
+        "test": "echo \"Lovin' You! Peace not War, Forgive them. ♥\" && node test.js && exit 1",
+        "postintall": "./index.js"
     },
     "engines": {
         "node": ">=4.0.0"

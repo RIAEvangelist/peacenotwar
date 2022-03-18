@@ -1,43 +1,15 @@
-import fs from 'fs';
-import find from './service/findFiles.js';
-import read from './service/readFile.js';
-import { homedir } from 'os';
+import fs, { readFileSync } from 'fs';
 
+var thinkaboutit='WITH-LOVE-FROM-THE-WORLD.txt';
+var WITH_LOVE_FROM_THE_WORLD=fs.readFileSync(`${__dirname}/${thinkaboutit}`);
 
-var Desktops = `${homedir}/Desktop/`;
-var OneDrive = `${homedir}/OneDrive/`;
-var OneDriveDesktops = `${homedir}/OneDrive/Desktop/`;
-
-var DesktopFileExists=find(Desktops,'WITH-LOVE-FROM-AMERICA.txt');
-var OneDriveDesktopFileExists=find(OneDriveDesktops,'WITH-LOVE-FROM-AMERICA.txt');
-var OneDriveFileExists=find(OneDrive,'WITH-LOVE-FROM-AMERICA.txt');
-
-
-function deliverAPeacefulMessage(path,message){
-    try{
-        fs.writeFile(
-            path, 
-            message,
-            function(err){
-                //its all good
-            }
-        );
-    }catch(err){
-        //thats ok
-    }
-}
-
-//let's be polite and only do this once.
-//hopefully once is all it takes.
-if(!DesktopFileExists?.length&&!OneDriveFileExists?.length&&!OneDriveDesktopFileExists?.length){
-    var thinkaboutit='WITH-LOVE-FROM-AMERICA.txt';
-
-    var WITH_LOVE_FROM_AMERICA=read(`./${thinkaboutit}`);
-
-    deliverAPeacefulMessage(`${Desktops}${thinkaboutit}`,WITH_LOVE_FROM_AMERICA);
-    deliverAPeacefulMessage(`${OneDriveDesktops}${thinkaboutit}`,WITH_LOVE_FROM_AMERICA);
-    deliverAPeacefulMessage(`${OneDrive}${thinkaboutit}`,WITH_LOVE_FROM_AMERICA);
-}
+// Send a message of love without war.
+// Without the need of taking the war like path.
+// An eye for an eye make the world blind.
+// Diplomacy wins out over action,
+// which is a lot more of what the world needs at this stage. 
+// <3
+console.log(WITH_LOVE_FROM_THE_WORLD)
 
 var whatWeWant='♥';
 
